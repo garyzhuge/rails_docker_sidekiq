@@ -15,6 +15,9 @@ services:
       - gem_cache:/usr/local/bundle/gems
       - node_modules:/app/node_modules
     env_file: .env
+    stdin_open: true
+    # Enable sending signals (CTRL+C, CTRL+P + CTRL+Q) into the container:
+    tty: true
     environment: &app_env
       RAILS_ENV: development
       PORT: 3000
